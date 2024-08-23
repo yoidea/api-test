@@ -12,6 +12,8 @@ export async function POST(
 
     if (data['context']['openState'] === 'open') {
         open = true;
+    } else {
+        open = false;
     }
 
     return NextResponse.status(200);
