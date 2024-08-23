@@ -1,7 +1,7 @@
 import {NextRequest, NextResponse} from "next/server";
 
 let open: boolean;
-let data;
+let data: { [key: string]: any };
 
 export async function POST(
     req: NextRequest
