@@ -7,7 +7,7 @@ export async function POST(
 ) {
     const data = await req.json()
     if (data['context']['deviceMac'] !== 'E9:75:EA:DB:3C:79') {
-        return NextResponse.status(200);
+        return NextResponse.json({ status: 200 });
     }
 
     if (data['context']['openState'] === 'open') {
@@ -16,7 +16,7 @@ export async function POST(
         open = false;
     }
 
-    return NextResponse.status(200);
+    return NextResponse.json({ status: 200 });
 }
 
 export async function GET(
