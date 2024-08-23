@@ -22,7 +22,5 @@ export async function POST(
 export async function GET(
     req: NextRequest
 ) {
-    return NextResponse.json({
-        'open': `${open}`
-    }, { status: 200 })
+    return NextResponse.json(data, { status: 200 })
 }
