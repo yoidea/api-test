@@ -21,6 +21,6 @@ export async function GET(
     req: NextRequest
 ) {
     return NextResponse.json({
-        'open': ${open}
+        'open': `${open}`
     }, { status: 200 })
 }
