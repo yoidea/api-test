@@ -1,11 +1,12 @@
 import {NextRequest, NextResponse} from "next/server";
 
 let open: boolean;
+let data;
 
 export async function POST(
     req: NextRequest
 ) {
-    const data = await req.json()
+    data = await req.json()
     if (data['context']['deviceMac'] !== 'E9:75:EA:DB:3C:79') {
         return NextResponse.json({ status: 200 });
     }
