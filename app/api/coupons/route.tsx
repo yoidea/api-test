@@ -11,7 +11,8 @@ export async function POST(
     }
 
     const { TOKEN } = process.env
-    await fetch('https://api.line.me/v2/bot/message/broadcast', {
+    console.log(TOKEN)
+    const response = await fetch('https://api.line.me/v2/bot/message/broadcast', {
             method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -26,6 +27,8 @@ export async function POST(
             ]
         })
     })
+    const json = await response.json()
+    console.log(josn)
 
     if (data['context']['openState'] === 'open') {
         open = true;
@@ -40,8 +43,9 @@ export async function GET(
     req: NextRequest
 ) {
     const { TOKEN } = process.env
-    await fetch('https://api.line.me/v2/bot/message/broadcast', {
-        method: 'POST',
+    console.log(TOKEN)
+    const response = await fetch('https://api.line.me/v2/bot/message/broadcast', {
+            method: 'POST',
         headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${TOKEN}`
@@ -55,6 +59,9 @@ export async function GET(
             ]
         })
     })
+    const json = await response.json()
+    console.log(josn)
+
     return NextResponse.json({
         open: `${open}`
     }, { status: 200 })
