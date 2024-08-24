@@ -7,3 +7,24 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
+
+.status {
+  padding-top: 40%;
+  font-size: 300px;
+  padding-bottom:60%;
+}
+
+.open {
+  color: white;
+  background: red;
+}
+
+.close {
+  color: white;
+  background: green;
+}
+
+.loading {
+  color: white;
+  background: grey;
+}
