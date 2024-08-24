@@ -42,26 +42,6 @@ export async function POST(
 export async function GET(
     req: NextRequest
 ) {
-    const { TOKEN } = process.env
-    console.log(TOKEN)
-    const response = await fetch('https://api.line.me/v2/bot/message/broadcast', {
-            method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${TOKEN}`
-        },
-        body: JSON.stringify({
-            'messages': [
-                {
-                    'type': 'text',
-                    'text': '🚨社会の窓が開いているかもしれません'
-                }
-            ]
-        })
-    })
-    const json = await response.json()
-    console.log(json)
-
     return NextResponse.json({
         open: `${open}`
     }, { status: 200 })
