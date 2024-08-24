@@ -28,7 +28,7 @@ export async function POST(
         })
     })
     const json = await response.json()
-    console.log(josn)
+    console.log(json)
 
     if (data['context']['openState'] === 'open') {
         open = true;
@@ -60,7 +60,7 @@ export async function GET(
         })
     })
     const json = await response.json()
-    console.log(josn)
+    console.log(json)
 
     return NextResponse.json({
         open: `${open}`
