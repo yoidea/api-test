@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 export default function Update() {
-    const [data, setData] = useState(null);
+    const [data, setData] = useState<{open: null} | {open: "true"} | {open: "false"}>({open: null});
 
     useEffect(() => {
         const fetchData = async () => {
@@ -23,9 +23,9 @@ export default function Update() {
     }, []);
 
     return (
-        <div className={`container text-center ${data ? data.open === "true" ? "open" : "close" : "loading"}`}>
+        <div className={`container text-center ${data.open ? data.open === "true" ? "open" : "close" : "loading"}`}>
             <h1>現在の社会の窓</h1>
-            <p className="status">{data ? data.open === "true" ? "開" : "閉" : "👀"}</p>
+            <p className="status">{data.open ? data.open === "true" ? "開" : "閉" : "👀"}</p>
         </div>
     );
 }
